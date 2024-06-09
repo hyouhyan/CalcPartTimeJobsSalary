@@ -26,6 +26,7 @@ function showSalary(startDate, endDate){
   }
 
   let total = 0;
+  let kariTotal = 0;
 
   console.log(startDate + '\n' + endDate);
 
@@ -76,18 +77,20 @@ function showSalary(startDate, endDate){
       forShow.toFixed(2);
       events[i].setDescription(`給料: ${forShow}円`);
 
-      total += todayTotal;
+      if(title == "バイト仮") kariTotal += todayTotal;
+      else total += todayTotal;
 
       // console.log("total " + total);
     }
   }
   total += transpoMonth;
 
-  console.log(total);
   total = Math.ceil(total);
+  kariTotal = Math.ceil(kariTotal);
 
   console.log(total);
-  return total;
+  console.log(kariTotal);
+  return {"total":total, "kariTotal":kariTotal};
 }
 
 function isHoliday(day){
@@ -190,7 +193,7 @@ function writeToCal(year = (new Date()).getFullYear(), month = (new Date()).getM
 
   let salary = showSalary(startDate, endDate)
 
-  if(salary != 0){
+  if(salary.total != 0 || salary.kariTotal != 0){
     startDate.setMonth(startDate.getMonth() + 1);
     endDate.setMonth(endDate.getMonth() + 1);
 
@@ -218,7 +221,7 @@ function writeToCal(year = (new Date()).getFullYear(), month = (new Date()).getM
 
     startDate.setMonth(startDate.getMonth() - 1)
 
-    payday.setDescription(`給料(${startDate.getMonth() + 1}月分): ${salary}円`);
+    payday.setDescription(`給料(${startDate.getMonth() + 1}月分): ${salary.total}円\n給料(${startDate.getMonth() + 1}月分)仮: ${salary.kariTotal}円`);
   }
 }
 
