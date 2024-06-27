@@ -1,4 +1,8 @@
 # CalcPartTimeJobsSalary
 アルバイトの給料計算プログラム(GAS)  
-以下のChrome Extensionを使用  
-https://chromewebstore.google.com/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja
+
+Googleカレンダーをベースに給料計算を行う。  
+指定したカレンダーに「バイト」or「バイト仮」の名称のイベントを作成することで、給料が自動的に計算される。
+
+給料を計算後、プログラムは給料日に終日イベントを作成する。  
+そのイベントの説明欄に計算された給料が記される。
