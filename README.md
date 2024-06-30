@@ -19,7 +19,7 @@ Googleカレンダーをベースに給料計算を行う。
 ![スクリーンショット 2024-06-30 234725](https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/2dbd4a1f-d42c-4c16-90e4-78fbfb354e16)
 
 # 利用方法
-## 1. Gasの各定数を設定
+## 1. GASの各定数を設定
 
 ```javascript
 // シフトを管理するカレンダーのID
