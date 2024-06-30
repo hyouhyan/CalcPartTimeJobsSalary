@@ -8,15 +8,29 @@ Googleカレンダーをベースに給料計算を行う。
 そのイベントの説明欄に計算された給料が記される。
 
 # 仕様
+
 ## Input
 - シフトの管理はGoogleカレンダーで行う。
 - シフトのイベント名は「バイト」or「バイト仮」であること。  
 ![FireShot Capture 004 - Google カレンダー - 2024年 7月 - calendar google com](https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/3770ded5-9f7b-475c-bf76-e78e2f2e578d)
+
 ## Output
 - 日給はイベントの説明欄に記載される。  
 ![スクリーンショット 2024-06-30 234719](https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/ad241f66-9ae0-4a7d-b776-120da43305aa)
 - 月給は給料日に終日イベントが作成され、説明欄に記載される。  
 ![スクリーンショット 2024-06-30 234725](https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/2dbd4a1f-d42c-4c16-90e4-78fbfb354e16)
+
+## 給料計算
+- 時給は以下の4パターンが存在し、それぞれ時給が設定される
+  - 平日 昼
+  - 平日 夜
+  - 休日(土日祝) 昼
+  - 休日(土日祝) 夜
+- 夜間手当は、特定の時間以降の労働に対し支給される
+- 交通費は以下の2パターンが存在する
+  - 日給
+  - 月給
+
 
 # 利用方法
 ## 1. Gasの各定数を設定
