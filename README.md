@@ -12,7 +12,8 @@ Googleカレンダーをベースに給料計算を行う。
 ## Input
 - シフトの管理はGoogleカレンダーで行う。
 - シフトのイベント名は「バイト」or「バイト仮」であること。  
-![FireShot Capture 004 - Google カレンダー - 2024年 7月 - calendar google com](https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/3770ded5-9f7b-475c-bf76-e78e2f2e578d)
+<img src="https://github.com/hyouhyan/CalcPartTimeJobsSalary/assets/76419486/e8d2dfe5-c7c2-4d0a-aeb1-e55397c01aa0" width= "400px" >
+
 
 ## Output
 - 日給はイベントの説明欄に記載される。  
