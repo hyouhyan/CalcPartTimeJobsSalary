@@ -55,7 +55,7 @@ function showSalary(startDate, endDate){
       totalTime = normalTime + nightTime;
 
       // 労働基準法に基づき休憩時間
-      // 6時間超過時
+      // 6時間以上の時
       if(totalTime >= 6 * 60){
         normalTime -= 60;
       }
