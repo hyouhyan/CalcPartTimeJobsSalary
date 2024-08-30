@@ -1,5 +1,5 @@
 const calendar = CalendarApp.getCalendarById('6jn0bhoia26rbctuvcordk9vgk@group.calendar.google.com');
-const jpHoliday = CalendarApp.getCalendarById("ja.japanese#holiday@group.v.calendar.google.com");
+const jpHoliday = CalendarApp.getCalendarById("ja.japanese.official#holiday@group.v.calendar.google.com");
 
 // 給料の定義
 const salary = {
