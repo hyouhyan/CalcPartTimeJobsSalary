@@ -3,8 +3,8 @@ const jpHoliday = CalendarApp.getCalendarById("ja.japanese.official#holiday@grou
 
 // 給料の定義
 const salary = {
-  "weekday": {"normal": 1030, "night": 1130},
-  "weekend": {"normal": 1130, "night": 1130}
+  "weekday": {"normal": 1080, "night": 1180},
+  "weekend": {"normal": 1180, "night": 1180}
 };
 
 // 夜間手当支給開始時間の定義
@@ -77,8 +77,33 @@ function showSalary(startDate, endDate){
       forShow.toFixed(2);
       events[i].setDescription(`給料: ${forShow}円`);
 
+      // if(title == "バイト仮") kariTotal += todayTotal;
+      // else total += todayTotal;
+
+      // 該当日の始まりと終わり
+      let todayStartDate = new Date(events[i].getStartTime().getTime());
+      let todayEndDate = new Date(events[i].getEndTime().getTime());
+
+      todayStartDate.setHours(0);
+      todayStartDate.setMinutes(0);
+
+      todayEndDate.setHours(23);
+      todayEndDate.setMinutes(59);
+
+      // 該当日の予定一覧を取得
+      let todayAnotherEvents = calendar.getEvents(todayStartDate, todayEndDate);
+
+      let todayHasKari = false;
+
       if(title == "バイト仮") kariTotal += todayTotal;
-      else total += todayTotal;
+      else{
+        total += todayTotal;
+        for(let j = 0; j < todayAnotherEvents.length;j++){
+          if(todayAnotherEvents[j].getTitle() == "バイト仮") todayHasKari = true;
+        }
+        if(!todayHasKari) kariTotal += todayTotal;
+      }
+
 
       // console.log("total " + total);
     }
