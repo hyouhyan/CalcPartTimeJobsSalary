@@ -246,7 +246,11 @@ function writeToCal(year = (new Date()).getFullYear(), month = (new Date()).getM
 
     startDate.setMonth(startDate.getMonth() - 1)
 
-    payday.setDescription(`給料(${startDate.getMonth() + 1}月分): ${salary.total}円\n給料(${startDate.getMonth() + 1}月分)仮: ${salary.kariTotal}円`);
+    let description =`給料(${startDate.getMonth() + 1}月分): ${salary.total}円`;
+
+    if(salary.total != salary.kariTotal) description += `\n給料(${startDate.getMonth() + 1}月分)仮: ${salary.kariTotal}円`;
+
+    payday.setDescription(description);
   }
 }
 
