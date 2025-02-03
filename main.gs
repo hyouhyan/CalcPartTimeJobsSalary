@@ -74,7 +74,7 @@ function showSalary(startDate, endDate){
 
       todayTotal += transpoEvery;
       var forShow = todayTotal;
-      forShow.toFixed(2);
+      forShow = forShow.toFixed(2);
       events[i].setDescription(`給料: ${forShow}円`);
 
       // if(title == "バイト仮") kariTotal += todayTotal;
