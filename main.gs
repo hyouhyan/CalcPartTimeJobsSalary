@@ -104,8 +104,8 @@ function showSalary(startDate, endDate){
         if(!todayHasKari) kariTotal += todayTotal;
       }
 
-
-      // console.log("total " + total);
+      // 累計給料
+      events[i].setDescription(`${events[i].getDescription()}\n\n累計給料: ${Math.ceil(total)}円`);
     }
   }
   total += transpoMonth;
